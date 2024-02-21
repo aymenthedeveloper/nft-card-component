@@ -25,14 +25,35 @@
     color: var(--soft-blue);
     border-radius: 1em;
     box-sizing: border-box;
+    position: relative;
   }
   .nft_card > img{
     width: 100%;
     border-radius: .5em;
+    cursor: pointer;
+  }
+  .nft_card > img:hover + .overlay{
+    display: grid;
+  }
+  
+  .overlay{
+    position: absolute;
+    width: calc(100% - 3.2em);
+    top: 1.6em;
+    border-radius: 1em;
+    display: none;
+    place-items: center;
+    aspect-ratio: 1/1;
+    z-index: 5;
+    background-color: hsla(178, 100%, 50%, 0.7);
   }
   .nft_card h2{
     color: var(--White);
     font-size: 1.4rem;
+    cursor: pointer;
+  }
+  .nft_card h2:hover, .nft_card .owner p b:hover{
+    color: var(--cyan);
   }
   .nft_card > p{
     font-weight: 300;
@@ -67,5 +88,6 @@
   }
   .nft_card .owner p b{
     color: var(--White);
+    cursor: pointer;
   }
   
